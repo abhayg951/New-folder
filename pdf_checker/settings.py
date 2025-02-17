@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'pdf_checker.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://neondb_owner:npg_Lq4eHiMkzR3w@ep-red-sunset-a80t66zt-pooler.eastus2.azure.neon.tech/neondb?sslmode=require',
+        default=os.environ.get('DATABASE_URL'),
         conn_max_age=600
     )
 }
