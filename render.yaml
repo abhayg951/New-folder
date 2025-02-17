@@ -16,7 +16,3 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4 
-    disk:
-      name: Media
-      mountPath: /var/data/media
-      sizeGB: 10
