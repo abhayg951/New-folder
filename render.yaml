@@ -1,5 +1,6 @@
 services:
   - type: web
+    plan: free
     name: pdf_checker
     runtime: python
     buildCommand: "./build.sh"
