@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import os
 
-os.add_dll_directory(r"C:\Users\windo\Downloads\GTK-for-Windows-Runtime-Environment-Installer-2022-01-04\gtk-nsis-pack\bin")
+# os.add_dll_directory(r"C:\Users\windo\Downloads\GTK-for-Windows-Runtime-Environment-Installer-2022-01-04\gtk-nsis-pack\bin")
 from weasyprint import HTML
 from django.http import HttpResponse
 
