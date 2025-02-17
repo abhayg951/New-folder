@@ -1,3 +1,9 @@
+databases:
+  - name: neondb
+    plan: free
+    databaseName: neondb
+    user: neondb_owner
+
 services:
   - type: web
     plan: free
