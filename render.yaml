@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: pdf_checker
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn core.wsgi:application -t 1800 --keep-alive 1800"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.2
+      - key: DATABASE_URL
+        fromDatabase:
+          name: neondb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4 
+    disk:
+      name: Media
+      mountPath: /var/data/media
+      sizeGB: 10
